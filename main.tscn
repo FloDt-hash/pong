@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b821myv7hqira"]
+
+[node name="Main" type="Node2D" unique_id=2002199192]
+
+[node name="Background" type="ColorRect" parent="." unique_id=2090604658]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1024.0
+offset_bottom = 600.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CenterLine" type="Line2D" parent="." unique_id=81618280]
+points = PackedVector2Array(512, 0, 512, 600)
+width = 5.0
+default_color = Color(1, 1, 1, 0.3019608)
