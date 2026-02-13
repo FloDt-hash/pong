@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://b821myv7hqira"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7dm0k"]
+size = Vector2(20, 100)
+
 [node name="Main" type="Node2D" unique_id=2002199192]
 
 [node name="Background" type="ColorRect" parent="." unique_id=2090604658]
@@ -16,3 +19,14 @@ color = Color(0, 0, 0, 1)
 points = PackedVector2Array(512, 0, 512, 600)
 width = 5.0
 default_color = Color(1, 1, 1, 0.3019608)
+
+[node name="Paddle" type="CharacterBody2D" parent="." unique_id=990869484]
+
+[node name="ColorRect" type="ColorRect" parent="Paddle" unique_id=830019276]
+offset_left = -10.0
+offset_top = -50.0
+offset_right = 10.0
+offset_bottom = 50.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paddle" unique_id=380714503]
+shape = SubResource("RectangleShape2D_7dm0k")
