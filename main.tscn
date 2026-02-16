@@ -5,6 +5,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7dm0k"]
 size = Vector2(20, 100)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
+size = Vector2(15, 15)
+
 [node name="Main" type="Node2D" unique_id=2002199192]
 
 [node name="Background" type="ColorRect" parent="." unique_id=2090604658]
@@ -33,3 +36,14 @@ offset_bottom = 50.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Paddle" unique_id=380714503]
 shape = SubResource("RectangleShape2D_7dm0k")
+
+[node name="Ball" type="CharacterBody2D" parent="." unique_id=86596349]
+
+[node name="ColorRect" type="ColorRect" parent="Ball" unique_id=1672805381]
+offset_left = -7.5
+offset_top = -7.5
+offset_right = 7.5
+offset_bottom = 7.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball" unique_id=1061467474]
+shape = SubResource("RectangleShape2D_ig7tw")
