@@ -31,3 +31,7 @@ func _on_ball_goal_scored(player: int):
 func _update_score():
 	score_left_label.text = str(score_left)
 	score_right_label.text = str(score_right)
+	
+func _input(event: InputEvent):
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().paused = !get_tree().paused

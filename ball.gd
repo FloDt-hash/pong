@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 signal goal_scored(player)
 
+@onready var sound_rebound = $AudioStreamPlayer2D
 @export var initial_speed: float = 400.0
 
 var speed: float = 400.0
@@ -25,6 +26,7 @@ func  _physics_process(delta: float):
 	var collision = move_and_slide()
 	
 	if get_slide_collision_count() > 0:
+		sound_rebound.play()
 		var col = get_slide_collision(0)
 		
 		if col.get_collider().is_in_group("paddle"):
