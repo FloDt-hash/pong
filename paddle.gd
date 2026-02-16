@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 @export var speed: float = 400.0
 @export var is_ia: bool = false
+@export var touch_up: String = "player1_up"
+@export var touch_down: String = "player1_down"
 
 var ball: CharacterBody2D = null
 
@@ -16,9 +18,9 @@ func _physics_process(delta: float):
 func _move_player(delta):
 	var direction = 0
 	
-	if Input.is_action_pressed("player1_up"):
+	if Input.is_action_pressed(touch_up):
 		direction = -1
-	elif Input.is_action_pressed("player1_down"):
+	elif Input.is_action_pressed(touch_down):
 		direction = 1
 		
 	velocity.y = direction * speed
