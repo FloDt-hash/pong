@@ -1,15 +1,11 @@
 [gd_scene format=3 uid="uid://b821myv7hqira"]
 
-[ext_resource type="Script" uid="uid://enax4mp7akgn" path="res://paddle.gd" id="1_ig7tw"]
-[ext_resource type="Script" uid="uid://c5ktme8hejuti" path="res://ball.gd" id="2_0xm2m"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7dm0k"]
-size = Vector2(20, 100)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
-size = Vector2(15, 15)
+[ext_resource type="Script" uid="uid://diak504hkmkmd" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://d4j7xe1qi3tfu" path="res://paddle.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://de78u6sepvyir" path="res://ball.tscn" id="3_h2yge"]
 
 [node name="Main" type="Node2D" unique_id=2002199192]
+script = ExtResource("1_h2yge")
 
 [node name="Background" type="ColorRect" parent="." unique_id=2090604658]
 anchors_preset = 15
@@ -26,26 +22,12 @@ points = PackedVector2Array(512, 0, 512, 600)
 width = 5.0
 default_color = Color(1, 1, 1, 0.3019608)
 
-[node name="Paddle" type="CharacterBody2D" parent="." unique_id=990869484]
-script = ExtResource("1_ig7tw")
+[node name="PaddleLeft" parent="." unique_id=1769249898 groups=["paddle"] instance=ExtResource("2_0xm2m")]
+position = Vector2(50, 300)
 
-[node name="ColorRect" type="ColorRect" parent="Paddle" unique_id=830019276]
-offset_left = -10.0
-offset_top = -50.0
-offset_right = 10.0
-offset_bottom = 50.0
+[node name="PaddleRight" parent="." unique_id=585553609 groups=["paddle"] instance=ExtResource("2_0xm2m")]
+position = Vector2(974, 300)
+is_ia = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Paddle" unique_id=380714503]
-shape = SubResource("RectangleShape2D_7dm0k")
-
-[node name="Ball" type="CharacterBody2D" parent="." unique_id=86596349]
-script = ExtResource("2_0xm2m")
-
-[node name="ColorRect" type="ColorRect" parent="Ball" unique_id=1672805381]
-offset_left = -7.5
-offset_top = -7.5
-offset_right = 7.5
-offset_bottom = 7.5
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball" unique_id=1061467474]
-shape = SubResource("RectangleShape2D_ig7tw")
+[node name="Ball" parent="." unique_id=50956013 instance=ExtResource("3_h2yge")]
+position = Vector2(512, 300)
