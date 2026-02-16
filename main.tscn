@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b821myv7hqira"]
 
 [ext_resource type="Script" uid="uid://enax4mp7akgn" path="res://paddle.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://c5ktme8hejuti" path="res://ball.gd" id="2_0xm2m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7dm0k"]
 size = Vector2(20, 100)
@@ -38,6 +39,7 @@ offset_bottom = 50.0
 shape = SubResource("RectangleShape2D_7dm0k")
 
 [node name="Ball" type="CharacterBody2D" parent="." unique_id=86596349]
+script = ExtResource("2_0xm2m")
 
 [node name="ColorRect" type="ColorRect" parent="Ball" unique_id=1672805381]
 offset_left = -7.5
