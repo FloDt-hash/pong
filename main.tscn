@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://b821myv7hqira"]
 
+[ext_resource type="Script" uid="uid://enax4mp7akgn" path="res://paddle.gd" id="1_ig7tw"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7dm0k"]
 size = Vector2(20, 100)
 
@@ -21,6 +23,7 @@ width = 5.0
 default_color = Color(1, 1, 1, 0.3019608)
 
 [node name="Paddle" type="CharacterBody2D" parent="." unique_id=990869484]
+script = ExtResource("1_ig7tw")
 
 [node name="ColorRect" type="ColorRect" parent="Paddle" unique_id=830019276]
 offset_left = -10.0
