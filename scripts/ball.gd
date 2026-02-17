@@ -2,11 +2,13 @@ extends CharacterBody2D
 
 signal goal_scored(player)
 
-@onready var sound_rebound = $AudioStreamPlayer2D
 @export var initial_speed: float = 400.0
 
 var speed: float = 400.0
 var direction: Vector2 = Vector2.ZERO
+
+@onready var sound_rebound = $AudioStreamPlayer2D
+@onready var hit_particles: CPUParticles2D = $HitParticles
 
 func _ready():
 	reset_ball()
@@ -23,7 +25,7 @@ func reset_ball():
 	
 func  _physics_process(delta: float):
 	velocity = direction * speed
-	var collision = move_and_slide()
+	move_and_slide()
 	
 	if get_slide_collision_count() > 0:
 		sound_rebound.play()
@@ -40,8 +42,12 @@ func  _physics_process(delta: float):
 			
 			speed *= 1.05
 			
+			_emit_hit_particles()
+			
 	if position.y <= 7.5 or position.y >= 592.5:
 		direction.y = -direction.y
+		
+		_emit_hit_particles()
 		
 	if position.x < 0:
 		goal_scored.emit(2)
@@ -49,3 +55,7 @@ func  _physics_process(delta: float):
 	elif position.x > 1024:
 		goal_scored.emit(1)
 		reset_ball()
+
+func _emit_hit_particles() -> void:
+	hit_particles.restart()
+	hit_particles.emitting = true
