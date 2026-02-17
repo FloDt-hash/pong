@@ -4,6 +4,7 @@ extends Node2D
 @onready var score_right_label = $UI/ScoreRight
 @onready var ball = $Ball
 @onready var paddle_right = $PaddleRight
+@onready var pause_menu = $PauseMenu
 
 var score_left: int = 0
 var score_right: int = 0
@@ -31,7 +32,3 @@ func _on_ball_goal_scored(player: int):
 func _update_score():
 	score_left_label.text = str(score_left)
 	score_right_label.text = str(score_right)
-	
-func _input(event: InputEvent):
-	if event.is_action_pressed("ui_cancel"):
-		get_tree().paused = !get_tree().paused

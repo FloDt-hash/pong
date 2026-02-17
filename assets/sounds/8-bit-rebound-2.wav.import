@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://0tbdftmlb04n"
-path="res://.godot/imported/8-bit-rebound-2.wav-d1304ece47c54f3033bc93091d1d09aa.sample"
+path="res://.godot/imported/8-bit-rebound-2.wav-da4a23118c01bb9fea27b014c2f9eff5.sample"
 
 [deps]
 
-source_file="res://8-bit-rebound-2.wav"
-dest_files=["res://.godot/imported/8-bit-rebound-2.wav-d1304ece47c54f3033bc93091d1d09aa.sample"]
+source_file="res://assets/sounds/8-bit-rebound-2.wav"
+dest_files=["res://.godot/imported/8-bit-rebound-2.wav-da4a23118c01bb9fea27b014c2f9eff5.sample"]
 
 [params]
 

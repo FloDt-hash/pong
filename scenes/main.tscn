@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://b821myv7hqira"]
 
-[ext_resource type="Script" uid="uid://diak504hkmkmd" path="res://main.gd" id="1_h2yge"]
-[ext_resource type="PackedScene" uid="uid://d4j7xe1qi3tfu" path="res://paddle.tscn" id="2_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://de78u6sepvyir" path="res://ball.tscn" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://diak504hkmkmd" path="res://scripts/main.gd" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://d4j7xe1qi3tfu" path="res://scenes/paddle.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://de78u6sepvyir" path="res://scenes/ball.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://c4oogm42ah64q" path="res://scenes/pause_menu.tscn" id="4_jyhfs"]
 
 [node name="Main" type="Node2D" unique_id=2002199192]
 script = ExtResource("1_h2yge")
@@ -49,3 +50,5 @@ offset_right = 798.0
 offset_bottom = 73.0
 theme_override_font_sizes/font_size = 64
 text = "0"
+
+[node name="PauseMenu" parent="." unique_id=624315441 instance=ExtResource("4_jyhfs")]
