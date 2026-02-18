@@ -7,6 +7,7 @@
 size = Vector2(15, 15)
 
 [node name="Ball" type="CharacterBody2D" unique_id=50956013]
+collision_mask = 2
 script = ExtResource("1_x8fbi")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1604752721]
