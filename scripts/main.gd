@@ -5,14 +5,15 @@ extends Node2D
 @onready var ball = $Ball
 @onready var paddle_right = $PaddleRight
 @onready var pause_menu = $PauseMenu
+@onready var win_screen = $WinScreen
 
 var score_left: int = 0
 var score_right: int = 0
 
 func _ready() -> void:
 	ball.goal_scored.connect(_on_ball_goal_scored)
-	
 	paddle_right.ball = ball
+	win_screen.play_again.connect(_on_play_again)
 	
 	_update_score()
 	
@@ -25,10 +26,13 @@ func _on_ball_goal_scored(player: int):
 	_update_score()
 	
 	if score_left >= 5:
-		print("Player Left win !")
+		win_screen.show_winner("Player Left")
 	elif score_right >= 5:
-		print("Player Right win !")
+		win_screen.show_winner("Player Right")
 
 func _update_score():
 	score_left_label.text = str(score_left)
 	score_right_label.text = str(score_right)
+	
+func _on_play_again() -> void:
+	get_tree().reload_current_scene()
