@@ -6,6 +6,8 @@
 size = Vector2(20, 100)
 
 [node name="Paddle" type="CharacterBody2D" unique_id=1769249898]
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("1_0sbc1")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1677357662]
