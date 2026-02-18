@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bhdjhsav60rs5"]
+
+[ext_resource type="Script" uid="uid://dhueqn3y7fqbt" path="res://scripts/win_screen.gd" id="1_wv5lq"]
+
+[node name="WinScreen" type="CanvasLayer" unique_id=36547499]
+script = ExtResource("1_wv5lq")
+
+[node name="Overlay" type="ColorRect" parent="." unique_id=2076079174]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.749)
+
+[node name="ContentBox" type="VBoxContainer" parent="Overlay" unique_id=1740026382]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="WinnerLabel" type="Label" parent="Overlay/ContentBox" unique_id=1396187226]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Player X win !"
+horizontal_alignment = 1
+
+[node name="PlayAgainButton" type="Button" parent="Overlay/ContentBox" unique_id=1145584489]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Replay"
