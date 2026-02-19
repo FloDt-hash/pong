@@ -1,3 +1,48 @@
 # Godot 4+ specific ignores
 .godot/
-/android/
+.import/
+
+# Godot-specific
+*.translation
+*.import
+*.md5
+
+# Mono-specific ignores (if using C#)
+.mono/
+data_*/
+mono_crash.*.json
+
+# System/tool-specific ignores
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.directory
+
+# Build/export folders
+export/
+builds/
+*.exe
+*.pck
+*.zip
+*.apk
+*.dmg
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# IDE specific
+.vscode/
+.idea/
+*.code-workspace
+
+# Backup files
+*.bak
+*~
+
+# Temporary files
+*.tmp
+*.temp
